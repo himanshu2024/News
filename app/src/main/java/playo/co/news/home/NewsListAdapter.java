@@ -43,7 +43,8 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
         holder.itemMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(hitList.get(position).getUrl()));
+                mContext.startActivity(browserIntent);
             }
         });
     }
