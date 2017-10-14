@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import okhttp3.OkHttpClient;
+import okhttp3.internal.framed.ErrorCode;
 import playo.co.news.entity.NewsData;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -53,7 +54,7 @@ public class RestClient implements INetwork {
             @Override
             public void onFailure(Call<NewsData> call, Throwable t) {
 
-                uiCallBack.onError("Something went wrong!",ErrorCode.UNKNOWN_ERROR);
+                uiCallBack.onError("Something went wrong!", ErrorCode.INTERNAL_ERROR);
             }
         });
 
